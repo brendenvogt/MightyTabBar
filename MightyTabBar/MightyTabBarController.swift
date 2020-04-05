@@ -85,10 +85,11 @@ public class MightyTabBarController: UIViewController, UICollectionViewDataSourc
         collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
 
         view.addSubview(mightyTabBar)
+        let margins = self.view.layoutMarginsGuide
         mightyTabBar.translatesAutoresizingMaskIntoConstraints = false
         mightyTabBar.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         mightyTabBar.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        mightyTabBar.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        mightyTabBar.bottomAnchor.constraint(equalTo: margins.bottomAnchor).isActive = true
         mightyTabBar.heightAnchor.constraint(equalToConstant: mightyTabBar.tabItemHeight + 5).isActive = true
 
         view.addSubview(bottomView)
@@ -96,7 +97,7 @@ public class MightyTabBarController: UIViewController, UICollectionViewDataSourc
         bottomView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         bottomView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         bottomView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        bottomView.heightAnchor.constraint(equalToConstant: view.safeAreaInsets.bottom).isActive = true
+        bottomView.heightAnchor.constraint(equalToConstant: view.layoutMargins.bottom).isActive = true
 
         mightyTabBar.handleColor = handleColor
         mightyTabBar.selectedColor = selectedColor
